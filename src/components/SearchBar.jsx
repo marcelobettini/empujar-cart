@@ -1,23 +1,17 @@
-import { useState } from "react";
-const SearchBar = () => {
-  const [searchText, setSearchText] = useState("");
-
-  const handleSearch = (e) => {
-    setSearchText(e.target.value);
-  };
+import "./SearchBar.css";
+const SearchBar = ({ onChangeText }) => {
   return (
     <>
       <form>
-        <label htmlFor="">Producto</label>
+        <label htmlFor="">Buscar </label>
         <input
-          onChange={(e) => handleSearch(e)}
+          onChange={onChangeText}
           type="search"
           name="search"
           id="search"
-          placeholder="Reloj, TV Led..."
+          placeholder="jacket, led tv, etc..."
         />
       </form>
-      <p>{searchText}</p>
     </>
   );
 };
